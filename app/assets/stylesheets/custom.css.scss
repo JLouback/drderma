@@ -41,6 +41,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  font-family: 'Avenir-light';
 }
 
 h2 {
@@ -61,18 +62,21 @@ p {
 /* header */
 
 #logo {
+  font-family: 'Avenir-light';
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
   color: white;
-  text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
-  font-weight: bold;
   &:hover {
     color: white;
     text-decoration: none;
   }
+}
+
+.navbar {
+  background-color:#34495e;
 }
 
 /* footer */

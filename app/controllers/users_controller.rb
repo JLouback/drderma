@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+       log_in @user
       flash[:success] = "Dados enviados com sucesso! Sua conta será verificada e ativada em até 48 horas."
       redirect_to @user
     else

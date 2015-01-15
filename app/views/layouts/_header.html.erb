@@ -3,9 +3,17 @@
     <%= link_to "Dr.Derma | Dermatologia Colaborativa", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",    root_path %></li>
-        <li><%= link_to "Quem Somos", about_path %></li>
-        <li><%= link_to "Contato", contact_path %></li>
+      	<% if logged_in? %>
+          <li><%= link_to "Home",    root_path %></li>
+          <li><%= link_to "Quem Somos", about_path %></li>
+          <li><%= link_to "Contato", contact_path %></li>
+          <li><%= link_to "Sair", logout_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Home",    root_path %></li>
+          <li><%= link_to "Cadastro",    signup_path %></li>
+          <li><%= link_to "Quem Somos", about_path %></li>
+          <li><%= link_to "Contato", contact_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

@@ -19,6 +19,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.reorder("active ASC").order(:name).page(params[:page])
+  end
+
   private
 
     def user_params

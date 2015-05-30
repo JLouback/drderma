@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       AdminMailer.new_user_registered(@user).deliver_now
-      flash[:success] = "Dados enviados com sucesso! Sua conta será verificada e ativada em até 48 horas."
+      redirect_to success_path(:name=>@user.name)
     else
       flash[:error] = "Houve um erro com o seu cadastro. Verifique sua conexão e tente novamente."
     end

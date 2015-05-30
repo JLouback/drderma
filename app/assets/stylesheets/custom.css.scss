@@ -14,11 +14,13 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 html {
-  overflow-y: scroll;
+  height: 100%;
 }
 
 body {
   padding-top: 60px;
+  height: 100%;
+  overflow: auto;
 }
 
 section {
@@ -123,6 +125,7 @@ footer {
       margin-left: 15px;
     }
   }
+  display:block;
 }
 
 
@@ -217,5 +220,23 @@ input {
 
 .inactive_user {
   font-weight:bold;
+}
+
+.success-signup {
+  font-size: 1.6em;
+  font-family: "Avenir";
+  text-align: center;
+  padding-left: 20%;
+  padding-right: 20%;
+  min-height: 80%;
+  overflow-y:scroll;
+  display:block;
+}
+
+.main-content {
+  position:relative; /* needed for footer positioning*/
+  height:auto !important;
+  min-height:100%;
+  overflow: auto;
 }
 

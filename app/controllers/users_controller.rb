@@ -11,11 +11,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-       log_in @user
+      AdminMailer.new_user_registered(@user).deliver_now
       flash[:success] = "Dados enviados com sucesso! Sua conta será verificada e ativada em até 48 horas."
-      redirect_to @user
     else
-      render 'new'
+      flash[:error] = "Houve um erro com o seu cadastro. Verifique sua conexão e tente novamente."
     end
   end
 

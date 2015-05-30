@@ -19,7 +19,7 @@
       <%= f.label :password_confirmation, "Confirmação" %>
       <%= f.password_field :password_confirmation, class: 'form-control'  %>
 
-      <%= f.submit "Criar minha conta", class: "btn btn-primary"%>
+      <%= f.submit "Criar minha conta", class: "btn btn-primary", :disable_with=>"Loading..."%>
     <% end %>
   </div>
   <div id="error_explanation" class="col-md-3 error_explanation">

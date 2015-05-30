@@ -5,12 +5,12 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
+    if user && user.authenticate(params[:session][:password] && user.active == true)
       # Log the user in and redirect to the user's show page.
       log_in user
       redirect_to user
     else
-      flash.now[:danger] = 'Combinação inválida de email e senha.'
+      flash.now[:danger] = 'Combinação inválida de email e senha, ou conta ainda não ativada.'
       render 'new'
     end
   end

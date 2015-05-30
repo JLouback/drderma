@@ -15,6 +15,8 @@ gem 'turbolinks',     '2.3.0'
 gem 'jbuilder',       '2.2.3'
 gem 'sdoc',           '0.4.0', group: :doc
 gem 'tabs_on_rails'
+# Use devise for user authentication
+gem 'devise'
 
 
 group :development, :test do

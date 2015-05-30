@@ -6,6 +6,12 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 40 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, length: { minimum: 6 }
+  after_initialize :init
+  
+  def init
+    self.dermatologist = false if self.dermatologist.nil?
+    self.active = false if self.active.nil?
+  end
   
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -13,4 +19,5 @@ class User < ActiveRecord::Base
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
+  
 end

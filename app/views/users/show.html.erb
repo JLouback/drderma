@@ -3,19 +3,13 @@
   <aside class="col-md-3">
     <section class="user_info">
       <h1>
-        Nome:<strong><%= @user.name %></strong>
+        <strong>Nome: </strong><%= @user.name %>
 		<br>
-		CRM:<strong><%= @user.crm %></strong>
+		<strong>CRM: </strong><%= @user.crm %>
 		<br>
-		Email:<strong><%= @user.email %></strong>
+		<strong>Email: </strong><%= @user.email %>
       </h1>
     </section>
   </aside>
-  <h1>Usuários</h1>
-
-  <%= link_to "All Users", :action => "index"%> | <%= link_to "Users awaiting approval", :action => "index", :active => "false"%>
-
-  <ul class="users">
-    <%= render @users %>
-  </ul>
+  <h1>Casos</h1>
 </div>
